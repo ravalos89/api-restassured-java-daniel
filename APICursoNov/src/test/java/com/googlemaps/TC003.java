@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.Assert;
 
+import base.Base;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 
@@ -21,9 +22,7 @@ public class TC003 {
 				.then().statusCode(200).body("scope", equalTo("APP")).header("server", "Apache/2.4.18 (Ubuntu)")
 				.extract().asString();
 		
-		JsonPath jp = new JsonPath(response);
-		String placeId = jp.getString("place_id");
-		System.out.println(placeId);
+		String placeId = Base.getValueFromResponseJson(response, "place_id");
 		
 		// Step 2 - PUT update address
 		String newAddress = "Irapuato, Guanajuato";
@@ -43,8 +42,7 @@ public class TC003 {
 		.when().get("maps/api/place/get/json")
 		.then().log().all().assertThat().statusCode(200).extract().asString();
 		
-		JsonPath jp2 = new JsonPath(getResponseBody);
-		String addressUpdated = jp2.getString("address");
+		String addressUpdated = Base.getValueFromResponseJson(getResponseBody, "address");
 		
 		Assert.assertEquals(addressUpdated, newAddress);
 

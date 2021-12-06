@@ -2,6 +2,7 @@ package com.googlemaps;
 
 import org.testng.Assert;
 
+import base.Base;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import static io.restassured.RestAssured.given;
@@ -24,9 +25,11 @@ public class TC002 {
 		// Step 2 - Validate execution is getting place_id
 		System.out.println(response);
 
-		JsonPath jp = new JsonPath(response);
-		String Status = jp.getString("status");
-		System.out.println(Status);
+//		JsonPath jp = new JsonPath(response);
+//		String Status = jp.getString("status");
+//		System.out.println(Status);
+		
+		String Status = Base.getValueFromResponseJson(response, "status");
 
 		boolean validation;
 		if (Status.equals("OK")) {

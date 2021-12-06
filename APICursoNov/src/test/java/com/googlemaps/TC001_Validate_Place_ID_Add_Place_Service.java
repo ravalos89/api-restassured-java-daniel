@@ -5,8 +5,8 @@ import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.Assert;
 
+import base.Base;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 
 public class TC001_Validate_Place_ID_Add_Place_Service {
 	public static void main(String[] args) {
@@ -23,9 +23,11 @@ public class TC001_Validate_Place_ID_Add_Place_Service {
 		// Step 2 - Validate execution is getting place_id		
 		System.out.println(response);
 		
-		JsonPath jp = new JsonPath(response);
-		String placeId = jp.getString("place_id");
-		System.out.println(placeId);
+//		JsonPath jp = new JsonPath(response);
+//		String placeId = jp.getString("place_id");
+//		System.out.println(placeId);
+		
+		String placeId = Base.getValueFromResponseJson(response, "place_id");
 		
 		boolean validation;
 		if(placeId!="") {
