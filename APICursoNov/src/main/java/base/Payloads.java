@@ -5,7 +5,7 @@ public class Payloads {
 	public static String payloadComplex(){		
 		return "{\n"
 				+ "	\"dashboard\":{\n"
-				+ "		\"totalAmount\": 910,\n"
+				+ "		\"totalAmount\": 7290,\n"
 				+ "		\"website\": \"books.com\"\n"
 				+ "	},\n"
 				+ "	\"books\":[\n"

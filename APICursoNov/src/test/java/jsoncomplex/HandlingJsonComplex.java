@@ -20,6 +20,19 @@ public class HandlingJsonComplex {
 		//Ejercicio3 - Imprimir segundo Libro del nodo "Books"
 		String secondBook = jp.getString("books[1].title");
 		System.out.println("El nombre del segundo libro es: "+secondBook);
+		
+		//Ejercicio4 - 
+		int price = jp.getInt("books[2].price");
+		System.out.println("El Precio del tercer libro es:"+price);
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+		
+		// Ejercicio 5 Imprimir TODA la informacion
+		for(int i=0; i<books;i++) {
+			System.out.println("El nombre del libro #"+(i+1)+" es " + jp.getString("books["+i+"].title"));
+			System.out.println("El precio del libro es " + jp.getInt("books["+i+"].price"));
+			System.out.println("las copias vendidas son " + jp.getInt("books["+i+"].copies"));
+		}
 
 	}
 
