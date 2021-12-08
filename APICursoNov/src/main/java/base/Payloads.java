@@ -33,5 +33,24 @@ public class Payloads {
 				+ "	]\n"
 				+ "}";			
 	}
+	
+	public static String addBookPayload() {
+		return "{\n"
+		  		+ "    \"name\":\"100 años de soledad\",\n"
+		  		+ "    \"isbn\": \"DANIEL\",\n"
+		  		+ "    \"aisle\": \"145678\",\n"
+		  		+ "    \"author\":\"Gabriel Garcia Marquez\"\n"
+		  		+ "}";
+	}
+	
+	//Method overloaded
+	public static String addBookPayload(String isbn, String aisle) {
+		return "{\n"
+		  		+ "    \"name\":\"100 años de soledad\",\n"
+		  		+ "    \"isbn\": \""+isbn+"\",\n"
+		  		+ "    \"aisle\": \""+aisle+"\",\n"
+		  		+ "    \"author\":\"Gabriel Garcia Marquez\"\n"
+		  		+ "}";
+	}
 
 }

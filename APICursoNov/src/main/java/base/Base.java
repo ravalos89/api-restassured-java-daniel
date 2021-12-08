@@ -1,5 +1,9 @@
 package base;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import io.restassured.path.json.JsonPath;
 
 public class Base {
@@ -12,6 +16,14 @@ public class Base {
 	public static String getValueFromResponseJson(String response, String value) {
 		JsonPath js = new JsonPath(response);
 		return js.getString(value);
+	}
+	
+	/*
+	 * Get String from Path Json(External Json)
+	 * @author ricardo.avalos@automationsensei.com
+	 */
+	public static String getStringFromExternalJson(String jsonPath) throws IOException {
+		return new String(Files.readAllBytes(Paths.get(jsonPath)));
 	}
 
 }
