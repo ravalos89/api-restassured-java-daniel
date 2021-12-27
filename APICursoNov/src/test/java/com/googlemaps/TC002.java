@@ -1,12 +1,12 @@
 package com.googlemaps;
 
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
 import org.testng.Assert;
 
 import base.Base;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class TC002 {
 

@@ -7,7 +7,6 @@ import org.testng.Assert;
 
 import base.Base;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 
 public class TC003 {
 
